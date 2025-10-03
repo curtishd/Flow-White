@@ -20,7 +20,7 @@ object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        runBlocking {
+        runBlocking(Dispatchers.Default.limitedParallelism(1)) {
             FlatMacLightLaf.setup()
             launch(Dispatchers.Swing) {
                 SwingUtilities.updateComponentTreeUI(menu)
