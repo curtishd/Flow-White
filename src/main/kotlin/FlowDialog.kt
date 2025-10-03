@@ -54,8 +54,8 @@ object FlowDialog {
         }
     }
 
-    fun startCountDown(totalMillis: Int) {
-        if (totalMillis == 0) return
+    fun startCountDown(totalMillis: Long) {
+        if (totalMillis == 0L) return
         countDownTimer?.stop()
         FlowLabel.timeUpdateJob?.pause()
         remainingTime = totalMillis
@@ -76,9 +76,9 @@ object FlowDialog {
         FlowLabel.text = msToTimeStr(remainingTime)
     }
 
-    fun timeStringToMilliseconds(timeStr: String): Int {
+    fun timeStringToMilliseconds(timeStr: String): Long {
         val units = mapOf('h' to 60 * 60 * 1000, 'm' to 60 * 1000, 's' to 1000)
-        var totalMilliSec = 0
+        var totalMilliSec = 0L
         var currNum = 0
         for (ch in timeStr) {
             if (ch.isDigit()) {
@@ -96,7 +96,7 @@ object FlowDialog {
         return totalMilliSec
     }
 
-    fun msToTimeStr(timeMillis: Int): String {
+    fun msToTimeStr(timeMillis: Long): String {
         val totalSec = timeMillis / 1000
         val hours = totalSec / 3600
         val minutes = (totalSec % 3600) / 60

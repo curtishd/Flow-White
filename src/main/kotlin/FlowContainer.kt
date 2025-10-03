@@ -27,9 +27,13 @@ object FlowContainer : JWindow() {
             }
         }
     }
-    val countDown: JMenuItem by lazy(LazyThreadSafetyMode.NONE) {
-        JMenuItem("Count Down").apply {
-            addActionListener { FlowDialog.dialog.isVisible = true }
+    val countDown: JMenu by lazy(LazyThreadSafetyMode.NONE) {
+        JMenu("Count Down").apply {
+            addMouseListener(object : MouseAdapter() {
+                override fun mouseEntered(e: MouseEvent?) {
+                    FlowCountdown.initializeFontMenu(this@apply)
+                }
+            })
         }
     }
     val selectFont: JMenu by lazy(LazyThreadSafetyMode.NONE) {
@@ -54,7 +58,7 @@ object FlowContainer : JWindow() {
             add(exit)
         }
     }
-    var remainingTime = 0
+    var remainingTime = 0L
     private lateinit var trayIcon: TrayIcon
     private lateinit var systemTray: SystemTray
 
@@ -140,6 +144,7 @@ object FlowContainer : JWindow() {
             )
         }
     }
+
     @Suppress
     private fun readResolve(): Any = FlowContainer
 }
