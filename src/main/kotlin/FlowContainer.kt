@@ -4,14 +4,8 @@ package me.cdh
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import me.cdh.palette.RainbowColorPicker
-import java.awt.Color
-import java.awt.Dimension
-import java.awt.Image
-import java.awt.SystemTray
-import java.awt.Toolkit
-import java.awt.TrayIcon
+import java.awt.*
 import java.awt.event.ItemEvent
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
@@ -89,9 +83,7 @@ object FlowContainer : JWindow() {
                 val newFontSize = currentFontSize + rotation
 
                 // 设置字体大小的最小和最大限制
-                val minFontSize = 8
-                val maxFontSize = 72
-                val clampedFontSize = newFontSize.coerceIn(minFontSize, maxFontSize)
+                val clampedFontSize = newFontSize.coerceIn(8, 72)
                 // 只有当字体大小在合理范围内时才更新
                 if (clampedFontSize != currentFontSize) {
                     FlowLabel.font = FlowLabel.font.deriveFont(clampedFontSize.toFloat())
@@ -137,9 +129,7 @@ object FlowContainer : JWindow() {
                     systemTray.trayIconSize.width, systemTray.trayIconSize.height, Image.SCALE_SMOOTH
                 ), "Flow-White"
             )
-            withContext(Dispatchers.Main) {
-                systemTray.add(trayIcon)
-            }
+            systemTray.add(trayIcon)
         }
     }
 
@@ -150,8 +140,6 @@ object FlowContainer : JWindow() {
             )
         }
     }
-
-
     @Suppress
     private fun readResolve(): Any = FlowContainer
 }

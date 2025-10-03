@@ -1,6 +1,7 @@
 package me.cdh
 
 import me.cdh.FlowContainer.remainingTime
+import net.miginfocom.swing.MigLayout
 import java.awt.*
 import javax.swing.*
 
@@ -10,53 +11,46 @@ object FlowDialog {
     val toolTipLabel = JLabel("Format: 1h30m15s, 25m, 30s")
     val exitButton = JButton("Exit")
     val confirmButton = JButton("Confirm")
+    val userInputCheck = "^(([1-23]\\d*h)?([1-59]\\d*m)?([1-59]\\d*s)?|([1-59]\\d*m)?([1-59]\\d*s)?|([1-59]\\d*s)?)$".toRegex()
 
     var countDownTimer: CoroutineTimer? = null
 
     init {
-        textField.preferredSize = Dimension(250, 35)
-        textField.margin = Insets(5, 10, 5, 10)
-        dialog.title = "Set a countdown"
-        dialog.setSize(320, 180)
-        dialog.setLocationRelativeTo(null)
-        dialog.isModal = true
-
-        // Set union size
-        confirmButton.preferredSize = Dimension(80, 30)
-        exitButton.preferredSize = Dimension(80, 30)
-
-        val vLayout = Box.createVerticalBox()
-        vLayout.border = BorderFactory.createEmptyBorder(20, 20, 20, 20)
-
-        // text field
-        val textFieldPanel = JPanel(FlowLayout(FlowLayout.CENTER))
-        textFieldPanel.add(textField)
-        vLayout.add(textFieldPanel)
-
-        // tip content
-        vLayout.add(Box.createVerticalStrut(8))
         toolTipLabel.foreground = Color.GRAY
         toolTipLabel.font = toolTipLabel.font.deriveFont(11f)
         toolTipLabel.alignmentX = Component.CENTER_ALIGNMENT
-        vLayout.add(toolTipLabel)
+        textField.preferredSize = Dimension(250, 35)
+        textField.margin = Insets(5, 10, 5, 10)
+        dialog.title = "Set a countdown"
+        dialog.setSize(280, 150)
+        dialog.setLocationRelativeTo(null)
+        dialog.isModal = true
 
-        // Button area
-        vLayout.add(Box.createVerticalStrut(20))
-        val buttonPanel = JPanel(FlowLayout(FlowLayout.CENTER, 20, 0))
-        buttonPanel.add(confirmButton)
-        buttonPanel.add(exitButton)
-        vLayout.add(buttonPanel)
+        confirmButton.preferredSize = Dimension(80, 30)
+        exitButton.preferredSize = Dimension(80, 30)
 
-        dialog.add(vLayout)
+        dialog.layout = MigLayout()
+        dialog.add(textField, "span, grow")
+        dialog.add(toolTipLabel, "wrap")
+        dialog.add(confirmButton, "")
+        dialog.add(exitButton, "gap unrelated")
 
         exitButton.addActionListener { dialog.dispose() }
         confirmButton.addActionListener {
             val inputText = textField.text.trim()
-            if (inputText.isNotEmpty()) {
+            // validate user input.
+            if (inputText.isNotEmpty() && inputText.matches(userInputCheck)) {
                 val milliseconds = timeStringToMilliseconds(inputText)
+                dialog.dispose()
                 startCountDown(milliseconds)
+            } else {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Please enter valid characters!",
+                    "Number Format Error",
+                    JOptionPane.ERROR_MESSAGE
+                )
             }
-            dialog.dispose()
         }
     }
 
@@ -93,15 +87,6 @@ object FlowDialog {
                 if (ch in units) {
                     units[ch]?.let { totalMilliSec += currNum * it }
                     currNum = 0
-                } else {
-                    // Invalid input
-                    JOptionPane.showMessageDialog(
-                        dialog,
-                        "Please enter valid characters!",
-                        "Number Format Error",
-                        JOptionPane.ERROR_MESSAGE
-                    )
-                    return 0
                 }
             }
         }
