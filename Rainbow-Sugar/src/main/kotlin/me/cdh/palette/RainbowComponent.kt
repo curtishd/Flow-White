@@ -86,7 +86,7 @@ class RainbowComponent(private val colorPicker: RainbowColorPicker) : JComponent
         val g2 = g.create() as Graphics2D
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
 
-        val image = colorPicker.selectionModel?.getColorImage(width, height, UIScale.scale(10f))
+        val image = colorPicker.selectionModel?.fetchColorImage(width, height, UIScale.scale(10f))
         if (image != null) {
             g2.drawImage(image, x, y, null)
         }
@@ -119,10 +119,15 @@ class RainbowComponent(private val colorPicker: RainbowColorPicker) : JComponent
     }
 
     private fun colorToPoint(color: Color): Point2D.Float {
-        val hbs = Color.RGBtoHSB(color.red, color.green, color.blue, null)
-        val x = hbs[1]
-        val y = 1f - hbs[2]
-        return Point2D.Float(x, y)
+        val rgb = color.rgb
+        val r = (rgb and 16) and 0xff
+        val g = (rgb shr 8) and 0xff
+        val b = rgb and 0xff
+        val max = maxOf(r, g, b)
+        val min = maxOf(r, g, b)
+        val saturation = if (max == 0) 0f else (max - min) / max.toFloat()
+        val brightness = max / 255f
+        return Point2D.Float(saturation, 1f - brightness)
     }
 
     private fun pointToColor(point: Point2D.Float, hue: Float): Color {

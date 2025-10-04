@@ -48,3 +48,14 @@ tasks.named("compileJava", JavaCompile::class.java) {
         listOf("--patch-module", "me.cdh=${sourceSets["main"].output.asPath}")
     })
 }
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "me.cdh.Main"
+    manifest.attributes["Main-Module"] = "me.cdh"
+    val dependencies = configurations
+        .runtimeClasspath
+        .get()
+        .map(::zipTree) // OR .map { zipTree(it) }
+    from(dependencies)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

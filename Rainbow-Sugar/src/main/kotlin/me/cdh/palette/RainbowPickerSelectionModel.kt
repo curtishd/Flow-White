@@ -24,9 +24,15 @@ class RainbowPickerSelectionModel {
         return hueImage
     }
 
-    fun getColorImage(width: Int, height: Int, arc: Float): BufferedImage? {
-        createColorImage(width, height, arc)
-        return colorImage
+    private data class ImageCacheKey(val width: Int, val height: Int, val arc: Float, val hue: Float)
+
+    private var colorImageCache = mutableMapOf<ImageCacheKey, BufferedImage>()
+
+    fun fetchColorImage(width: Int, height: Int, arc: Float): BufferedImage {
+        val key = ImageCacheKey(width, height, arc, hue)
+        return colorImageCache.getOrPut(key) {
+            createColorImage(width, height, arc)!!
+        }
     }
 
     fun getSelectedColor(): Color? {
@@ -138,8 +144,8 @@ class RainbowPickerSelectionModel {
         }
     }
 
-    private fun createColorImage(width: Int, height: Int, arc: Float) {
-        if (width <= 0 || height <= 0) return
+    private fun createColorImage(width: Int, height: Int, arc: Float): BufferedImage? {
+        if (width <= 0 || height <= 0) return null
         if (colorImage == null || (colorImage!!.width != width || colorImage!!.height != height || oldColorArc != arc) || oldHue != hue) {
             colorImage = BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB)
             val g2 = colorImage!!.createGraphics()
@@ -154,6 +160,7 @@ class RainbowPickerSelectionModel {
             oldHue = hue
             oldColorArc = arc
         }
+        return colorImage
     }
 
     fun addChangeListener(listener: RainbowChangedListener?) {
