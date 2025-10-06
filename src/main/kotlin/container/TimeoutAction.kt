@@ -169,4 +169,31 @@ sealed interface TimeoutAction {
 
         override fun configure(): Boolean = true
     }
+
+    data object LockScreenAction : TimeoutAction {
+        override fun execute() {
+            val os = System.getProperty("os.name").lowercase()
+            try {
+                when {
+                    os.contains("win") -> Runtime.getRuntime()
+                        .exec(arrayOf("Powershell", "rundll32.exe user32.dll,LockWorkStation"))
+
+                    os.contains("mac") -> Runtime.getRuntime().exec(arrayOf("pmset displaysleepnow"))
+                    os.contains("nix") || os.contains("nux") -> Runtime.getRuntime()
+                        .exec(arrayOf("gnome-screensaver-command -l"))
+
+                    else -> throw UnsupportedOperationException("Unsupported operating system")
+                }
+            } catch (e: Exception) {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Lock Failed: ${e.message}",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                )
+            }
+        }
+
+        override fun configure(): Boolean = true
+    }
 }
