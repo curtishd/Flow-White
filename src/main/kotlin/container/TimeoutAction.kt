@@ -13,7 +13,7 @@ sealed interface TimeoutAction {
 
 
     data object OpenApplicationAction : TimeoutAction {
-        var applicationPath: String? = null
+        private var applicationPath: String? = null
 
         override fun execute() {
             applicationPath?.let { path ->
@@ -24,11 +24,9 @@ sealed interface TimeoutAction {
                         null, "Failed to open application: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
                     )
                 }
-            } ?: run {
-                JOptionPane.showMessageDialog(
-                    null, "No application configured", "Configuration Error", JOptionPane.WARNING_MESSAGE
-                )
-            }
+            } ?: JOptionPane.showMessageDialog(
+                null, "No application configured", "Configuration Error", JOptionPane.WARNING_MESSAGE
+            )
         }
 
         override fun configure(): Boolean {
@@ -64,11 +62,10 @@ sealed interface TimeoutAction {
                 true
             } else false
         }
-
     }
 
     data object OpenWebPageAction : TimeoutAction {
-        var url = ""
+        private var url = ""
 
         override fun execute() {
             if (url.isEmpty()) {

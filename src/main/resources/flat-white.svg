@@ -1,0 +1,47 @@
+<svg width="128" height="128" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="coffeeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#A67B5B"/>
+            <stop offset="100%" stop-color="#8B4513"/>
+        </linearGradient>
+        <linearGradient id="tomatoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF6B6B"/>
+            <stop offset="100%" stop-color="#FF4757"/>
+        </linearGradient>
+    </defs>
+
+    <circle cx="8" cy="8" r="7" fill="url(#coffeeGradient)" stroke="#D4B896" stroke-width="0.5"/>
+
+    <ellipse cx="8" cy="6.5" rx="3.5" ry="1.2" fill="#4A2C2A" opacity="0.8"/>
+
+    <path d="M 8,5
+           C 9,3 10,4 10,5
+           C 11,6 10,7 9,7
+           C 8,8 7,7 6,7
+           C 5,6 6,5 7,5
+           Z"
+          fill="url(#tomatoGradient)"
+          opacity="0.9"/>
+
+    <path d="M 7,4.5
+           L 8,3
+           L 9,4.5
+           Z"
+          fill="#2E8B57"
+          opacity="0.8"/>
+
+    <g opacity="0.6">
+        <circle cx="5" cy="4" r="0.8" fill="#FFFFFF"/>
+        <circle cx="10" cy="3.5" r="0.6" fill="#FFFFFF"/>
+        <circle cx="7" cy="2.5" r="0.5" fill="#FFFFFF"/>
+    </g>
+
+    <g stroke="#FFFFFF" stroke-width="0.3" opacity="0.7">
+        <line x1="8" y1="3" x2="8" y2="3.5"/>
+        <line x1="11" y1="6" x2="10.5" y2="6"/>
+        <line x1="8" y1="9" x2="8" y2="8.5"/>
+        <line x1="5" y1="6" x2="5.5" y2="6"/>
+    </g>
+
+    <circle cx="6" cy="6" r="0.8" fill="#FFFFFF" opacity="0.3"/>
+</svg>
