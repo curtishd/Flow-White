@@ -15,11 +15,11 @@ object TimeoutManager {
     }
 
     private val actions = mapOf(
-        Type.NOTIFICATION to TimeoutAction.NotificationAction(),
-        Type.OPEN_APPLICATION to TimeoutAction.OpenApplicationAction(),
-        Type.OPEN_WEB_PAGE to TimeoutAction.OpenWebPageAction(),
-        Type.SHUTDOWN to TimeoutAction.ShutdownAction(),
-        Type.RESTART to TimeoutAction.RestartAction()
+        Type.NOTIFICATION to TimeoutAction.NotificationAction,
+        Type.OPEN_APPLICATION to TimeoutAction.OpenApplicationAction,
+        Type.OPEN_WEB_PAGE to TimeoutAction.OpenWebPageAction,
+        Type.SHUTDOWN to TimeoutAction.ShutdownAction,
+        Type.RESTART to TimeoutAction.RestartAction
     )
 
     private val menuItems = mutableMapOf<String, JRadioButtonMenuItem>()

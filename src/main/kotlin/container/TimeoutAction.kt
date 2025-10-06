@@ -8,14 +8,12 @@ import javax.swing.JOptionPane
 import javax.swing.filechooser.FileNameExtensionFilter
 
 sealed interface TimeoutAction {
-    val name: String
     fun execute()
     fun configure(): Boolean
 
 
-    class OpenApplicationAction : TimeoutAction {
+    data object OpenApplicationAction : TimeoutAction {
         var applicationPath: String? = null
-        override val name: String get() = "Open Application"
 
         override fun execute() {
             applicationPath?.let { path ->
@@ -23,18 +21,12 @@ sealed interface TimeoutAction {
                     Runtime.getRuntime().exec(arrayOf(path))
                 } catch (e: Exception) {
                     JOptionPane.showMessageDialog(
-                        null,
-                        "Failed to open application: ${e.message}",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE
+                        null, "Failed to open application: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
                     )
                 }
             } ?: run {
                 JOptionPane.showMessageDialog(
-                    null,
-                    "No application configured",
-                    "Configuration Error",
-                    JOptionPane.WARNING_MESSAGE
+                    null, "No application configured", "Configuration Error", JOptionPane.WARNING_MESSAGE
                 )
             }
         }
@@ -57,17 +49,11 @@ sealed interface TimeoutAction {
                 )
 
                 os.contains("linux") || os.contains("unix") -> FileNameExtensionFilter(
-                    "Linux Executable Files (*.sh, *.bin, *.run)",
-                    "sh",
-                    "bin",
-                    "run"
+                    "Linux Executable Files (*.sh, *.bin, *.run)", "sh", "bin", "run"
                 )
 
                 os.contains("mac") -> FileNameExtensionFilter(
-                    "macOS Applications (*.app, *.dmg, *.pkg)",
-                    "app",
-                    "dmg",
-                    "pkg"
+                    "macOS Applications (*.app, *.dmg, *.pkg)", "app", "dmg", "pkg"
                 )
 
                 else -> FileNameExtensionFilter("All Files", "*")
@@ -81,17 +67,13 @@ sealed interface TimeoutAction {
 
     }
 
-    class OpenWebPageAction : TimeoutAction {
-         var url = ""
-        override val name: String get() = "Open Web Page"
+    data object OpenWebPageAction : TimeoutAction {
+        var url = ""
 
         override fun execute() {
             if (url.isEmpty()) {
                 JOptionPane.showMessageDialog(
-                    null,
-                    "No URL configured for web page action",
-                    "Configuration Error",
-                    JOptionPane.WARNING_MESSAGE
+                    null, "No URL configured for web page action", "Configuration Error", JOptionPane.WARNING_MESSAGE
                 )
                 return
             }
@@ -99,10 +81,7 @@ sealed interface TimeoutAction {
                 Desktop.getDesktop().browse(URI(url))
             } catch (e: Exception) {
                 JOptionPane.showMessageDialog(
-                    null,
-                    "Failed to open URL: ${e.message}",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
+                    null, "Failed to open URL: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
                 )
             }
         }
@@ -115,8 +94,7 @@ sealed interface TimeoutAction {
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 null,
-                url.ifEmpty { "https://www.example.com" }
-            ) as? String
+                url.ifEmpty { "https://www.example.com" }) as? String
 
             return inputUrl?.let {
                 url = if (!it.startsWith("http")) "https://$it" else it
@@ -125,8 +103,7 @@ sealed interface TimeoutAction {
         }
     }
 
-    class ShutdownAction : TimeoutAction {
-        override val name: String get() = "Shutdown Computer"
+    data object ShutdownAction : TimeoutAction {
 
         override fun execute() {
             try {
@@ -148,10 +125,7 @@ sealed interface TimeoutAction {
                 }
             } catch (e: Exception) {
                 JOptionPane.showMessageDialog(
-                    null,
-                    "Failed to shutdown: ${e.message}",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
+                    null, "Failed to shutdown: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
                 )
             }
         }
@@ -159,8 +133,7 @@ sealed interface TimeoutAction {
         override fun configure(): Boolean = true
     }
 
-    class RestartAction : TimeoutAction {
-        override val name: String get() = "Restart Computer"
+    data object RestartAction : TimeoutAction {
 
         override fun execute() {
             val result = JOptionPane.showConfirmDialog(
@@ -182,10 +155,7 @@ sealed interface TimeoutAction {
                     Runtime.getRuntime().exec(command)
                 } catch (e: Exception) {
                     JOptionPane.showMessageDialog(
-                        null,
-                        "Failed to restart: ${e.message}",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE
+                        null, "Failed to restart: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
                     )
                 }
             }
@@ -194,8 +164,7 @@ sealed interface TimeoutAction {
         override fun configure(): Boolean = true
     }
 
-    class NotificationAction : TimeoutAction {
-        override val name: String get() = "Show Notification"
+    data object NotificationAction : TimeoutAction {
 
         override fun execute() {
             SystemTrayManager.showTimeUpNotification()

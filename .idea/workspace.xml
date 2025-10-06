@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="" />
+    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="First commit.">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,26 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;curtishd&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/curtishd/Flow-White.git&quot;,
+    &quot;accountId&quot;: &quot;17388c1e-3eb4-4af1-9e1c-510ce5d8b4d0&quot;
+  }
+}</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="D:\Scoop\persist\repo\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="D:\Scoop\apps\temurin21-jdk\current" gradleVersion="8.14">
     <option name="jvmArguments">
       <list>
@@ -25,10 +50,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="33flYdcI9fWoOJGTyaeiHNi55qm" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
@@ -40,6 +65,8 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
@@ -63,6 +90,42 @@
       <option name="presentableId" value="Default" />
       <updated>1758242641225</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit.">
+      <option name="closed" value="true" />
+      <created>1759716245760</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759716245760</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit." />
   </component>
 </project>
