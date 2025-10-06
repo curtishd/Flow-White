@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="refactor: Use data object instead class.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/flat-white.svg" afterDir="false" />
+    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="feat: Add lock screen action in Timeout manager.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/SystemTrayManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/SystemTrayManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/kotlin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +66,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;curtishd&quot;
-  }
+  &quot;history&quot;: [
+    {
+      &quot;searchQuery&quot;: &quot;#1&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;curtishd&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOP85M2c6sLXqG&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1759719002094
+    }
+  ]
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/curtishd/Flow-White.git&quot;,
     &quot;accountId&quot;: &quot;17388c1e-3eb4-4af1-9e1c-510ce5d8b4d0&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;curtishd&quot;,
+    &quot;repository&quot;: &quot;Flow-White&quot;
   }
 }</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="D:\Scoop\persist\repo\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="D:\Scoop\apps\temurin21-jdk\current" gradleVersion="8.14">
@@ -112,7 +135,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Flow-White [run]">
+  <component name="RunManager" selected="Gradle.Flow-White [clean]">
     <configuration name="Flow-White [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,8 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Flow-White [run]" />
         <item itemvalue="Gradle.Flow-White [clean]" />
+        <item itemvalue="Gradle.Flow-White [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +220,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759716745322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="doc: update README.md.">
+      <option name="closed" value="true" />
+      <created>1759718874627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759718874627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: Add lock screen action in Timeout manager.">
+      <option name="closed" value="true" />
+      <created>1759720513918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720513918</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +265,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit." />
     <MESSAGE value="refactor: Use data object instead class." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Use data object instead class." />
+    <MESSAGE value="doc: update README.md." />
+    <MESSAGE value="feat: Add lock screen action in Timeout manager." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add lock screen action in Timeout manager." />
   </component>
 </project>

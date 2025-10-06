@@ -10,6 +10,7 @@ object TimeoutManager {
         const val NOTIFICATION = "notification"
         const val OPEN_APPLICATION = "openApplication"
         const val OPEN_WEB_PAGE = "openWebPage"
+        const val LOCK_SCREEN = "lockScreen"
         const val SHUTDOWN = "shutDown"
         const val RESTART = "restart"
     }
@@ -18,6 +19,7 @@ object TimeoutManager {
         Type.NOTIFICATION to TimeoutAction.NotificationAction,
         Type.OPEN_APPLICATION to TimeoutAction.OpenApplicationAction,
         Type.OPEN_WEB_PAGE to TimeoutAction.OpenWebPageAction,
+        Type.LOCK_SCREEN to TimeoutAction.LockScreenAction,
         Type.SHUTDOWN to TimeoutAction.ShutdownAction,
         Type.RESTART to TimeoutAction.RestartAction
     )
@@ -26,8 +28,7 @@ object TimeoutManager {
     private lateinit var bGroup: ButtonGroup
     private var isInitialized = false
 
-    var selectedAction: TimeoutAction = actions[Type.NOTIFICATION]!!
-        private set
+    private var selectedAction: TimeoutAction = actions[Type.NOTIFICATION]!!
 
     fun executeSelectedAction() {
         selectedAction.execute()
@@ -40,6 +41,7 @@ object TimeoutManager {
         createMenuItem(Type.NOTIFICATION, "Show Notification", menu, true)
         createMenuItem(Type.OPEN_APPLICATION, "Open Application", menu)
         createMenuItem(Type.OPEN_WEB_PAGE, "Open Web Page", menu)
+        createMenuItem(Type.LOCK_SCREEN, "Lock Screen", menu)
         menu.addSeparator()
         createMenuItem(Type.SHUTDOWN, "Shutdown Computer", menu)
         createMenuItem(Type.RESTART, "Restart Computer", menu)

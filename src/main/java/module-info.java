@@ -1,10 +1,10 @@
 module me.cdh {
-    requires kotlin.stdlib;
     requires java.desktop;
-    requires kotlinx.coroutines.core;
+    requires kotlin.stdlib;
     requires kotlinx.coroutines.swing;
-    requires com.formdev.flatlaf;
+    requires kotlinx.coroutines.core;
     requires com.miglayout.swing;
     requires com.miglayout.core;
+    requires com.formdev.flatlaf;
     requires me.cdh.palette;
 }
