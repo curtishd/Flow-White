@@ -10,9 +10,11 @@ import javax.swing.SwingUtilities
 import javax.swing.event.ChangeEvent
 import javax.swing.event.ChangeListener
 
-class RainbowPaletteComponent(private val colorData: RainbowPaletteData, private val itemPainter: RainbowPaletteItemPainter) :
-    JComponent() {
-    private val items: MutableList<Item?> = ArrayList<Item?>()
+class RainbowPaletteComponent(
+    private val colorData: RainbowPaletteData,
+    private val itemPainter: RainbowPaletteItemPainter
+) : JComponent() {
+    private val items = ArrayList<Item?>()
 
     private var hoverIndex = -1
     private var selectedIndex = -1

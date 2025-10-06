@@ -28,8 +28,7 @@ object TimeoutManager {
     private lateinit var bGroup: ButtonGroup
     private var isInitialized = false
 
-    var selectedAction: TimeoutAction = actions[Type.NOTIFICATION]!!
-        private set
+    private var selectedAction: TimeoutAction = actions[Type.NOTIFICATION]!!
 
     fun executeSelectedAction() {
         selectedAction.execute()

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="doc: update README.md.">
+    <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="feat: Add lock screen action in Timeout manager.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/container/TimeoutAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +135,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Flow-White [run]">
+  <component name="RunManager" selected="Gradle.Flow-White [clean]">
     <configuration name="Flow-White [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -190,8 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Flow-White [run]" />
         <item itemvalue="Gradle.Flow-White [clean]" />
+        <item itemvalue="Gradle.Flow-White [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759718874627</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Add lock screen action in Timeout manager.">
+      <option name="closed" value="true" />
+      <created>1759720513918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759720513918</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +266,7 @@
     <MESSAGE value="First commit." />
     <MESSAGE value="refactor: Use data object instead class." />
     <MESSAGE value="doc: update README.md." />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: update README.md." />
+    <MESSAGE value="feat: Add lock screen action in Timeout manager." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add lock screen action in Timeout manager." />
   </component>
 </project>
