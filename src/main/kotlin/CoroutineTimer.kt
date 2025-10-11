@@ -33,6 +33,5 @@ class CoroutineTimer(
     fun stop() {
         isActive = false
         job?.cancel()
-        job = null
     }
 }

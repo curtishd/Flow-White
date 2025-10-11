@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="feat: Add lock screen action in Timeout manager.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/windows.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPaletteComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/java/module-info.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CoroutineTimer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CoroutineTimer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/WindowDragManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/WindowDragManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,12 +133,18 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Flow-White [clean]">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle clean" />
+      <command value="gradle run" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.Flow-White [run]">
     <configuration name="Flow-White [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -189,10 +198,14 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Flow-White [clean]" />
+      <item itemvalue="Gradle.Flow-White [run]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Flow-White [clean]" />
         <item itemvalue="Gradle.Flow-White [run]" />
+        <item itemvalue="Gradle.Flow-White [clean]" />
       </list>
     </recent_temporary>
   </component>

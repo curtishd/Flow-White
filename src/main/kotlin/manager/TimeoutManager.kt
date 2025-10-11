@@ -6,29 +6,26 @@ import javax.swing.JMenu
 import javax.swing.JRadioButtonMenuItem
 
 object TimeoutManager {
-    object Type {
-        const val NOTIFICATION = "notification"
-        const val OPEN_APPLICATION = "openApplication"
-        const val OPEN_WEB_PAGE = "openWebPage"
-        const val LOCK_SCREEN = "lockScreen"
-        const val SHUTDOWN = "shutDown"
-        const val RESTART = "restart"
-    }
-
+    const val NOTIFICATION = "notification"
+    const val OPEN_APPLICATION = "openApplication"
+    const val OPEN_WEB_PAGE = "openWebPage"
+    const val LOCK_SCREEN = "lockScreen"
+    const val SHUTDOWN = "shutDown"
+    const val RESTART = "restart"
     private val actions = mapOf(
-        Type.NOTIFICATION to TimeoutAction.NotificationAction,
-        Type.OPEN_APPLICATION to TimeoutAction.OpenApplicationAction,
-        Type.OPEN_WEB_PAGE to TimeoutAction.OpenWebPageAction,
-        Type.LOCK_SCREEN to TimeoutAction.LockScreenAction,
-        Type.SHUTDOWN to TimeoutAction.ShutdownAction,
-        Type.RESTART to TimeoutAction.RestartAction
+        NOTIFICATION to TimeoutAction.NotificationAction,
+        OPEN_APPLICATION to TimeoutAction.OpenApplicationAction,
+        OPEN_WEB_PAGE to TimeoutAction.OpenWebPageAction,
+        LOCK_SCREEN to TimeoutAction.LockScreenAction,
+        SHUTDOWN to TimeoutAction.ShutdownAction,
+        RESTART to TimeoutAction.RestartAction
     )
 
     private val menuItems = mutableMapOf<String, JRadioButtonMenuItem>()
     private lateinit var bGroup: ButtonGroup
     private var isInitialized = false
 
-    private var selectedAction: TimeoutAction = actions[Type.NOTIFICATION]!!
+    private var selectedAction: TimeoutAction = actions[NOTIFICATION]!!
 
     fun executeSelectedAction() {
         selectedAction.execute()
@@ -38,13 +35,13 @@ object TimeoutManager {
         if (isInitialized) return
         bGroup = ButtonGroup()
         // create menu item
-        createMenuItem(Type.NOTIFICATION, "Show Notification", menu, true)
-        createMenuItem(Type.OPEN_APPLICATION, "Open Application", menu)
-        createMenuItem(Type.OPEN_WEB_PAGE, "Open Web Page", menu)
-        createMenuItem(Type.LOCK_SCREEN, "Lock Screen", menu)
+        createMenuItem(NOTIFICATION, "Show Notification", menu, true)
+        createMenuItem(OPEN_APPLICATION, "Open Application", menu)
+        createMenuItem(OPEN_WEB_PAGE, "Open Web Page", menu)
+        createMenuItem(LOCK_SCREEN, "Lock Screen", menu)
         menu.addSeparator()
-        createMenuItem(Type.SHUTDOWN, "Shutdown Computer", menu)
-        createMenuItem(Type.RESTART, "Restart Computer", menu)
+        createMenuItem(SHUTDOWN, "Shutdown Computer", menu)
+        createMenuItem(RESTART, "Restart Computer", menu)
 
         isInitialized = true
     }
