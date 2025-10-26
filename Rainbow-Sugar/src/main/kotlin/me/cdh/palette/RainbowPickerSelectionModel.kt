@@ -116,10 +116,7 @@ class RainbowPickerSelectionModel {
         get() = Color.WHITE
 
     private fun toHueColor(color: Color?): Float {
-        if (color == null) {
-            return 0f
-        }
-        return Color.RGBtoHSB(color.red, color.green, color.blue, null)[0]
+        return color?.let { Color.RGBtoHSB(color.red, color.green, color.blue, null)[0] } ?: 0f
     }
 
     private fun createHueColor(width: Int, height: Int, arc: Float) {

@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a11a7b2-29af-4529-8c71-66a28cfe0195" name="Changes" comment="feat: Add lock screen action in Timeout manager.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/windows.yml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CoroutineTimer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CoroutineTimer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/TimeoutManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/manager/WindowDragManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/manager/WindowDragManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowColorPicker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowColorPicker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPickerSelectionModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Rainbow-Sugar/src/main/kotlin/me/cdh/palette/RainbowPickerSelectionModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/container/FrostedGlassEffect.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/container/FrostedGlassEffect.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +55,25 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Flow-White" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -78,17 +93,24 @@
   ],
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GitHubPullRequestState">{
-  &quot;prStates&quot;: [
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
     {
-      &quot;id&quot;: {
-        &quot;id&quot;: &quot;PR_kwDOP85M2c6sLXqG&quot;,
-        &quot;number&quot;: 1
+      "id": {
+        "id": "PR_kwDOP85M2c6sLXqG",
+        "number": 1
       },
-      &quot;lastSeen&quot;: 1759719002094
+      "lastSeen": 1759719002094
+    },
+    {
+      "id": {
+        "id": "PR_kwDOP85M2c6sNV-W",
+        "number": 2
+      },
+      "lastSeen": 1761458260555
     }
   ]
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/curtishd/Flow-White.git&quot;,
@@ -126,25 +148,61 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Flow-White [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Flow-White [run].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Flow-White [build].executor": "Run",
+    "Gradle.Flow-White [clean].executor": "Run",
+    "Gradle.Flow-White [copyDependencies].executor": "Run",
+    "Gradle.Flow-White [jar].executor": "Run",
+    "Gradle.Flow-White [run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/workspace/Flow-White/build/classes/kotlin",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\Flow-White\build\classes\kotlin" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle clean" />
       <command value="gradle run" />
+      <command value="gradle copyDependencies" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Flow-White [run]">
+  <component name="RunManager" selected="Gradle.Flow-White [build]">
+    <configuration name="Flow-White [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Flow-White [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -157,6 +215,50 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Flow-White [copyDependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="copyDependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Flow-White [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -199,13 +301,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.Flow-White [build]" />
+      <item itemvalue="Gradle.Flow-White [copyDependencies]" />
+      <item itemvalue="Gradle.Flow-White [jar]" />
       <item itemvalue="Gradle.Flow-White [clean]" />
       <item itemvalue="Gradle.Flow-White [run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Flow-White [run]" />
+        <item itemvalue="Gradle.Flow-White [build]" />
+        <item itemvalue="Gradle.Flow-White [copyDependencies]" />
         <item itemvalue="Gradle.Flow-White [clean]" />
+        <item itemvalue="Gradle.Flow-White [run]" />
+        <item itemvalue="Gradle.Flow-White [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -281,5 +389,15 @@
     <MESSAGE value="doc: update README.md." />
     <MESSAGE value="feat: Add lock screen action in Timeout manager." />
     <option name="LAST_COMMIT_MESSAGE" value="feat: Add lock screen action in Timeout manager." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ExceptionInInitializerError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

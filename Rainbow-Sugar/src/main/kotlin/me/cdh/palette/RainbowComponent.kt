@@ -116,11 +116,11 @@ class RainbowComponent(private val colorPicker: RainbowColorPicker) : JComponent
 
     private fun colorToPoint(color: Color): Point2D.Float {
         val rgb = color.rgb
-        val r = (rgb and 16) and 0xff
+        val r = (rgb shr 16) and 0xff
         val g = (rgb shr 8) and 0xff
         val b = rgb and 0xff
         val max = maxOf(r, g, b)
-        val min = maxOf(r, g, b)
+        val min = minOf(r, g, b)
         val saturation = if (max == 0) 0f else (max - min) / max.toFloat()
         val brightness = max / 255f
         return Point2D.Float(saturation, 1f - brightness)

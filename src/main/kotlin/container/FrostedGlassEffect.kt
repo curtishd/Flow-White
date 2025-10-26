@@ -5,7 +5,7 @@ import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.RenderingHints
 import java.awt.geom.RoundRectangle2D
-import java.util.random.RandomGenerator
+import kotlin.random.Random
 
 class FrostedGlassEffect {
     var enabled = true
@@ -41,12 +41,11 @@ class FrostedGlassEffect {
         g2d.fill(area)
 
         // 添加磨砂玻璃的纹理效果 - 绘制一些微小的噪点
-        val random = RandomGenerator.getDefault()
         (0..<50).forEach { _ ->
-            val x = random.nextInt(FlowContainer.width)
-            val y = random.nextInt(FlowContainer.height)
-            val size = random.nextInt(3) + 1
-            val alpha = random.nextInt(30) + 10
+            val x = Random.nextInt(FlowContainer.width)
+            val y = Random.nextInt(FlowContainer.height)
+            val size = Random.nextInt(3) + 1
+            val alpha = Random.nextInt(30) + 10
 
             g2d.color = Color(255, 255, 255, alpha)
             g2d.fillOval(x, y, size, size)
