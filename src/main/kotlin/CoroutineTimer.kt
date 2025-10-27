@@ -25,8 +25,7 @@ class CoroutineTimer(
     }
 
     fun pause() {
-        isActive = false
-        job?.cancel()
+        stop()
         job = null
     }
 

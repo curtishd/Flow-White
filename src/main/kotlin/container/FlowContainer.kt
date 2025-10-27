@@ -33,7 +33,9 @@ object FlowContainer : JWindow() {
 
     override fun paint(g: Graphics?) {
         super.paint(g)
-        glassEffect.paint(g as Graphics2D)
+        val g2d = g as Graphics2D
+        glassEffect.paint(g2d)
+        g2d.dispose()
     }
 
     @Suppress

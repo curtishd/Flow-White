@@ -6,8 +6,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.swing.Swing
 import me.cdh.container.FlowContainer
-import me.cdh.manager.MenuManager
-import javax.swing.SwingUtilities
 
 object Main {
     @JvmStatic
@@ -15,7 +13,6 @@ object Main {
         runBlocking(Dispatchers.Swing) {
             FlatMacLightLaf.setup()
             launch {
-                SwingUtilities.updateComponentTreeUI(MenuManager.menu)
                 FlowContainer.isVisible = true
             }
         }
