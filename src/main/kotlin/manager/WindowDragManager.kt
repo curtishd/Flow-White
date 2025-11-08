@@ -2,18 +2,28 @@ package me.cdh.manager
 
 import me.cdh.container.FlowContainer
 import java.awt.Dimension
+import java.awt.Point
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.awt.event.MouseWheelEvent
 
 object WindowDragManager {
-    private val mouseMotionAdapter = object : MouseAdapter() {
+    private val motionAdapter = object : MouseAdapter() {
+        var dragOffset: Point? = null
+        override fun mousePressed(e: MouseEvent?) {
+            e ?: return
+            dragOffset = Point(e.x, e.y)
+        }
+
         override fun mouseDragged(e: MouseEvent?) {
             e ?: return
-            FlowContainer.setLocation(
-                e.locationOnScreen.x - FlowContainer.width / 2,
-                e.locationOnScreen.y - FlowContainer.height / 2
-            )
+            dragOffset?.let {
+                FlowContainer.setLocation(e.locationOnScreen.x - it.x, e.locationOnScreen.y - it.y)
+            }
+        }
+
+        override fun mouseReleased(e: MouseEvent?) {
+            dragOffset = null
         }
     }
     private val mouseWheelAdapter = object : MouseAdapter() {
@@ -41,12 +51,14 @@ object WindowDragManager {
     }
 
     fun enableDragging() {
-        FlowContainer.addMouseMotionListener(mouseMotionAdapter)
+        FlowContainer.addMouseMotionListener(motionAdapter)
+        FlowContainer.addMouseListener(motionAdapter)
         FlowContainer.addMouseWheelListener(mouseWheelAdapter)
     }
 
     fun disableDragging() {
-        FlowContainer.removeMouseMotionListener(mouseMotionAdapter)
+        FlowContainer.removeMouseMotionListener(motionAdapter)
+        FlowContainer.removeMouseListener(motionAdapter)
         FlowContainer.removeMouseWheelListener(mouseWheelAdapter)
     }
 

@@ -27,20 +27,16 @@ class FrostedGlassEffect {
     }
 
     private fun createFrostedGlassEffect(g2d: Graphics2D) {
-        // 创建圆角矩形区域
-        val arc = 20f // 圆角半径
+        val arc = 20f
         val area =
             RoundRectangle2D.Float(0f, 0f, FlowContainer.width.toFloat(), FlowContainer.height.toFloat(), arc, arc)
 
-        // 设置绘制区域
         g2d.clip = area
 
-        // 绘制半透明背景（磨砂玻璃基础色）
         val baseColor = Color(240, 240, 245, (255 * 0.15f).toInt())
         g2d.color = baseColor
         g2d.fill(area)
 
-        // 添加磨砂玻璃的纹理效果 - 绘制一些微小的噪点
         val random = RandomGenerator.getDefault()
         (0..<50).forEach { _ ->
             val x = random.nextInt(FlowContainer.width)
@@ -52,12 +48,10 @@ class FrostedGlassEffect {
             g2d.fillOval(x, y, size, size)
         }
 
-        // 添加边框效果
         g2d.color = Color(200, 200, 210, 100)
         g2d.stroke = BasicStroke(1.5f)
         g2d.draw(area)
 
-        // 添加内发光效果
         g2d.color = Color(255, 255, 255, 80)
         g2d.stroke = BasicStroke(1f)
         g2d.draw(
